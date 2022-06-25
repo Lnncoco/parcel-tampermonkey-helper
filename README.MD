@@ -11,7 +11,7 @@ parcel 的油猴脚本编写辅助插件。
 
 ## 插件使用
 
-得益于 `parcel` 的便捷性，只需要配置 `parcel` 使用此插件即可开始工作。
+得益于 `parcel` 的便捷性，只需要配置 `parcel` 使用此插件即可使用。
 
 1. 首先已安装好 `parcel`，再安装插件包
 
@@ -30,24 +30,11 @@ parcel 的油猴脚本编写辅助插件。
    }
    ```
 
-## 插件配置
-
-在 `package.json` 中可以对插件进行配置（一般无需配置）
-
-```json
-{
-  "tampermonkey": {
-    "metaPath": "./meta.json", // 默认值 同目录下的meta.json 可自定义文件位置
-    "parser": "SWC" | "REGEX" // 默认值 SWC
-  }
-}
-```
-
 ## UserScript 信息
 
-油猴脚本使用时需要添加 UserScript 信息，默认读取根目录下的 `meta.json` 文件。
+油猴脚本使用时需要添加 UserScript 信息，默认读取根目录下的 `userScriptPath.json` 文件。
 
-`meta.json` 文件以键值对的形式定义所需的 UserScript 信息。可重复的字段使用数组定义，不可重复的字段填写字符串。
+`userScriptPath.json` 文件以键值对的形式定义所需的 UserScript 信息。可重复的字段使用数组定义，不可重复的字段填写字符串。
 
 编码中使用到的 `GM_*` 与 `unsafeWindow` 函数需要使用 `@grant` 先申明一下，程序会自动分析使用到的函数，并与配置文件中的定义融合。
 
@@ -73,7 +60,7 @@ parcel 的油猴脚本编写辅助插件。
   "@description": string; // package.json#description
 ```
 
-`meta.json` 示例：
+`userScriptPath` 示例：
 
 ```json
 {
@@ -112,4 +99,17 @@ HRM 默认使用浏览器地址连接，但不适合脚本的开发场景，导�
 ```typescript
 import style from "bundle-text:./style.css";
 GM_addStyle(style);
+```
+
+## 插件配置
+
+在 `package.json` 中可以对插件进行配置（调试使用，正常使用默认配置即可）
+
+```json5
+{
+  tampermonkey: {
+    metaPath: "./userScriptPath.json", // 默认值 同目录下的userScriptPath.json 可自定义文件位置
+    parser: "SWC", // SWC | REGEX 默认值 SWC
+  },
+}
 ```
