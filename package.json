@@ -1,0 +1,23 @@
+{
+  "name": "parcel-tampermonkey-helper",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Lnncoco <lnncoco@foxmail.com>",
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "publish": "lerna publish",
+    "build:compressor": "lerna run --scope parcel-compressor-tampermonkey-helper build",
+    "build:optimizer": "lerna run --scope parcel-optimizer-tampermonkey-helper build"
+  },
+  "devDependencies": {
+    "lerna": "^5.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lnncoco/parcel-tampermonkey-helper.git"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

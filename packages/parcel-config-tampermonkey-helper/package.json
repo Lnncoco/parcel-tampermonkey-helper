@@ -1,0 +1,19 @@
+{
+  "name": "parcel-config-tampermonkey-helper",
+  "main": "index.json",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "Lnncoco <lnncoco@foxmail.com>",
+  "engines": {
+    "node": ">= 12.0.0",
+    "parcel": "^2.1.0"
+  },
+  "dependencies": {
+    "parcel-compressor-tampermonkey-helper": "^1.0.1",
+    "parcel-optimizer-tampermonkey-helper": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lnncoco/parcel-tampermonkey-helper.git"
+  }
+}

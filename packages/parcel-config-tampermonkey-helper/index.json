@@ -1,0 +1,8 @@
+{
+  "optimizers": {
+    "*.js": ["parcel-optimizer-tampermonkey-helper"]
+  },
+  "compressors": {
+    "*.js": ["parcel-compressor-tampermonkey-helper"]
+  }
+}

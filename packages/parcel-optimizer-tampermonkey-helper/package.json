@@ -1,0 +1,34 @@
+{
+  "name": "parcel-optimizer-tampermonkey-helper",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "Lnncoco <lnncoco@foxmail.com>",
+  "main": "lib/index.js",
+  "source": "src/index.ts",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {
+    "prepublishOnly": "yarn run build",
+    "build": "rimraf lib && parcel build --no-source-maps",
+    "analyzer": "parcel build --reporter @parcel/reporter-bundle-analyzer"
+  },
+  "engines": {
+    "node": ">= 12.0.0",
+    "parcel": "^2.1.0"
+  },
+  "dependencies": {
+    "@parcel/plugin": "^2.4.1",
+    "@parcel/utils": "^2.5.0",
+    "@swc/core": "^1.2.172"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "parcel": "^2.5.0",
+    "rimraf": "^3.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lnncoco/parcel-tampermonkey-helper.git"
+  }
+}
