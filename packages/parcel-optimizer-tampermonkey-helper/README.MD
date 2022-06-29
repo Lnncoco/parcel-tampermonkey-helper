@@ -21,20 +21,20 @@
 
 在 `package.json` 中可以对插件进行配置（一般无需配置）
 
-```json
+```json5
 {
-  "tampermonkey": {
-    "metaPath": "./meta.json", // 默认值 同目录下的meta.json 可自定义文件位置
-    "parser": "SWC" | "REGEX" // 默认值 SWC
-  }
+  tampermonkey: {
+    metaPath: "./userScriptPath.json", // 默认值 同目录下的userScriptPath.json 可自定义文件位置
+    parser: "SWC", // SWC | REGEX 默认值 SWC
+  },
 }
 ```
 
 ## UserScript 信息
 
-油猴脚本使用时需要添加 UserScript 信息，默认读取根目录下的 `meta.json` 文件。
+油猴脚本使用时需要添加 UserScript 信息，默认读取根目录下的 `userScriptPath.json` 文件。
 
-`meta.json` 文件以键值对的形式定义所需的 UserScript 信息。可重复的字段使用数组定义，不可重复的字段填写字符串。
+`userScriptPath.json` 文件以键值对的形式定义所需的 UserScript 信息。可重复的字段使用数组定义，不可重复的字段填写字符串。
 
 编码中使用到的 `GM_*` 与 `unsafeWindow` 函数需要使用 `@grant` 先申明一下，程序会自动分析使用到的函数，并与配置文件中的定义融合。
 
@@ -60,7 +60,7 @@
   "@description": string; // package.json#description
 ```
 
-`meta.json` 示例：
+`userScriptPath` 示例：
 
 ```json
 {
